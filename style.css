@@ -1,0 +1,31 @@
+@font-face {
+    font-family:first ;
+    src: url(./font/MomoSignature-Regular.ttf);
+}
+
+
+.navbar {
+    background-color: #b8e994;
+    height: 149px;
+}
+.sakura{
+    font-family: first;
+    font-size: 60px;
+    color: rgb(95, 80, 87);
+}
+.card img{
+   height: 250px;
+    object-fit: contain;
+}
+.card{
+    height: 500px;
+    width: 350px;
+    
+}
+.card-text{
+    overflow-y: hidden;
+}
+.container-fluid{
+     margin: 0;
+    padding: 0;
+}
