@@ -682,9 +682,51 @@ function search(){
                 
                `;
               
-            
+            // ✔ Always show button
+    viewBtnBox.innerHTML = `
+    <button onclick="viewAll()" class="btn btnall btn-outline-success px-4 py-2">
+        View All Products
+    </button>
+`;
         }
 
+}
+function viewAll(){
+    
+for (let category in mangastore) {  
+    allprod.innerHTML =""                   // Genre (ex: Genre)
+    for (let genre in mangastore[category]) {          // Action
+        // console.log(genre);
+        selectG.innerHTML += `
+            <option value="${genre}" class="opt">${genre.toUpperCase()}</option>
+                
+
+        `
+        
+        for (let series in mangastore[category][genre]) {  // onepiece, bleach, naruto
+            for (let volume in mangastore[category][genre][series]) { // vol1, vol2, vol3...
+
+                let item = mangastore[category][genre][series][volume];
+                let allprod = document.getElementById("allproducts");
+
+                allprod.innerHTML += `
+                <div class="col">
+                    <div class="card">
+                        <img src="${item.src}" class="card-img-top" alt="${item.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.name}</h5>
+                            <p class="card-text">${item.description}</p>
+                        </div>
+                        <div class="card-footer">
+                            <h5 class="price">Rs.${item.price}/-</h5>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+        }
+    }
+}
 }
 var selectG = document.getElementById("genre");
 var animeselect = document.getElementById("animeselect");
@@ -711,50 +753,6 @@ function change() {
     }
 }
 
-// --- STEP 3: Search button → filtered volumes show ---
-// function filterManga() {
-//     allproducts.innerHTML = ""; // Clear old cards
-
-//     let genreValue = selectG.value;
-//     let animeValue = animeselect.value;
-
-//     // Puri series object
-//     let animeData = mangastore.Genre[genreValue][animeValue];
-
-//     for (let vol in animeData) {
-//         let item = animeData[vol];
-
-//         allproducts.innerHTML += `
-//         <div class="col">
-//             <div class="card">
-//                 <img src="${item.src}" class="card-img-top" alt="${item.name}">
-//                 <div class="card-body">
-//                     <h5 class="card-title">${item.name}</h5>
-//                     <p class="card-text">${item.description}</p>
-//                 </div>
-//                 <div class="card-footer">
-//                     <h5 class="price">Rs.${item.price}/-</h5>
-//                 </div>
-//             </div>
-//         </div>
-//          <div class="col btnCol">
-//         <button onclick="viewAll()" class="btn allBtn btn-outline-success" type="button">
-//                 View All Products
-//               </button>
-//                </div>
-//         `;
-//         allproducts.innerHTML += `
-//         <div class="col btnCol">
-//             <button onclick="viewAll()" class="btn allBtn btn-outline-success" type="button">
-//                 View All Products
-//             </button>
-//         </div>`
-
-//     }
-    
-
-    
-// }
 
 function filterManga() {
     console.log("FILTER RUNNING...");
@@ -769,7 +767,7 @@ function filterManga() {
     let animeValue = animeselect.value;
 
     let animeData = mangastore.Genre[genreValue][animeValue];
-    // console.log(hello);
+    console.log(hello);
     
 
     for (let vol in animeData) {
@@ -792,10 +790,5 @@ function filterManga() {
         
     }
 
-    // ✔ Always show button
-    viewBtnBox.innerHTML = `
-        <button onclick="viewAll()" class="btn btn-outline-success px-4 py-2">
-            View All Products
-        </button>
-    `;
+    
 }

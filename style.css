@@ -210,7 +210,15 @@ body {
     /* Soft shadow */
     cursor: pointer;
 }
-#viewBtnBox {
-  position: relative;
-  z-index: 9999;
+.btnall{
+    width: 31%;
+    height: 55px;
+    background-color: #00BFA6;
+    color: #000;
+}
+.btn:hover{
+    background-color: #00BFA6;
+    color: #000;
+
+
 }
