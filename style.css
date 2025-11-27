@@ -1,31 +1,216 @@
+body {
+    background: url('https://images.openai.com/static-rsc-1/C-26mIgT9qvbGT-0Zt_S9xKIz_C0bSXWo6e5SnuJnbU4Tfva14JhWdxQEpDjgSLWL24R4sMaMXSv25LvxLyOLFZEjrkxTY-Hwbn8aWExcaCDfivgg8IUj4Xp4n9b-r4jfeRJeb8oj3Ayi5eBjKgQ3g');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 @font-face {
-    font-family:first ;
-    src: url(./font/MomoSignature-Regular.ttf);
+    font-family: first;
+    src: url(./font/MontserratAlternates-SemiBold.ttf);
 }
 
 
-.navbar {
-    background-color: #b8e994;
-    height: 149px;
-}
-.sakura{
+
+.mangaworld {
     font-family: first;
     font-size: 60px;
     color: rgb(95, 80, 87);
 }
-.card img{
-   height: 250px;
-    object-fit: contain;
+
+/* .card img{
+   height: 280px;
 }
 .card{
-    height: 500px;
+    height: 510px;
     width: 350px;
+    border: none;
     
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: 1.5s;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 .card-text{
     overflow-y: hidden;
+} */
+.card {
+    height: 510px;
+    width: 350px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
-.container-fluid{
-     margin: 0;
-    padding: 0;
+
+/* Image */
+.card img {
+    height: 280px;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+}
+
+.sel1 {
+    height: 50px;
+    color: #045046;
+    font-size: large;
+    font-weight: 900;
+    font-family: first;
+
+}
+
+.sel1:hover {
+    transform: scale(1.03);
+    /* box-shadow: 0 15px 30px rgba(0,0,0,0.25); */
+    border: 1px solid #080808;
+    cursor: pointer;
+    color: #00BFA6;
+
+
+}
+
+.sel2 {
+    color: #045046;
+    font-size: large;
+    font-weight: 900;
+    font-family: first;
+
+}
+
+.sel2:hover {
+    transform: scale(1.03);
+    /* box-shadow: 0 15px 30px rgba(0,0,0,0.25); */
+    border: 1px solid #080808;
+    cursor: pointer;
+    color: #00BFA6;
+
+
+
+}
+
+.opt {
+    font-size: 60;
+    font-weight: 900;
+    font-family: first;
+    color: #00BFA6;
+
+}
+
+.btn {
+    width: 50%;
+    font-size: 60;
+    font-weight: 900;
+    font-family: first;
+
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    box-shadow: 0 10px 20px rgba(139, 101, 101, 0.5);
+    /* Soft shadow */
+    cursor: pointer;
+    color: #000;
+}
+
+/* Card Body */
+.card-body {
+    padding: 18px;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Description */
+.card-text {
+    overflow-y: hidden;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.card-footer {
+    background: #fff;
+    border-top: none;
+    padding: 15px;
+}
+
+/* Price */
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Glow Effect on Hover (Matches Black Navbar Aesthetic) */
+.card:hover .price {
+    color: #ff9800;
+}
+
+
+.navbar {
+    background-color: #1F1F1F;
+    /* Dark Charcoal */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #F5F5F5;
+    /* Off-White */
+    font-weight: bold;
+}
+
+.navbar .form-control {
+    background-color: #F0F0F0;
+    /* Light Gray */
+    border: 1px solid #CCC;
+    color: #333333;
+}
+
+.navbar .btn-outline-success {
+    background-color: #00BFA6;
+    /* Teal Accent */
+    border: none;
+    color: white;
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #00E5FF;
+    /* Bright Teal */
+    color: #1F1F1F;
+    box-shadow: 0 0 8px #00E5FF;
+}
+
+.carousel-inner img {
+    height: 575px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.05);
+    transition: 2s;
+    box-shadow: 0 10px 20px rgba(139, 101, 101, 0.5);
+    /* Soft shadow */
+    cursor: pointer;
+}
+#viewBtnBox {
+  position: relative;
+  z-index: 9999;
 }
